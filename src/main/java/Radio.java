@@ -1,7 +1,9 @@
 public class Radio {
     private int currentNumberRadiostation;
+    private int currentSoundVolume;
 
     public int getCurrentNumberRadiostation() {
+
         return currentNumberRadiostation;
     }
 
@@ -14,6 +16,21 @@ public class Radio {
         }
 
         currentNumberRadiostation = newNumberCurrentRadiostation;
+    }
+
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
+
+
+    public void setCurrentSoundVolume(int newCurrentSoundVolume) {
+        if (newCurrentSoundVolume < 0) {
+            return;
+        }
+        if (newCurrentSoundVolume > 100) {
+            return;
+        }
+        currentSoundVolume = newCurrentSoundVolume;
     }
 
     public void increaseNumberRadiostation() {
@@ -40,23 +57,6 @@ public class Radio {
         currentNumberRadiostation = 0;
     }
 
-
-    private int currentSoundVolume;
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-
-    public void setCurrentSoundVolume(int newCurrentSoundVolume) {
-        if (newCurrentSoundVolume < 0) {
-            return;
-        }
-        if (newCurrentSoundVolume > 100) {
-            return;
-        }
-        currentSoundVolume = newCurrentSoundVolume;
-    }
 
 
     public void increaseSoundVolume() {
