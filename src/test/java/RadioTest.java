@@ -31,7 +31,7 @@ public class RadioTest {
     public void shouldSetNumberRadioStationAboveMax() {
         Radio radio = new Radio();
 
-        radio.setCurrentNumberRadioStation(9);
+        radio.setCurrentNumberRadioStation(10);
 
         int expected = 0;
         int actual = radio.getCurrentNumberRadioStation();

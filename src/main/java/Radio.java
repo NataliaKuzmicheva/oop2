@@ -19,7 +19,7 @@ public class Radio {
         if (newNumberCurrentRadioStation < 0) {
             return;
         }
-        if (newNumberCurrentRadioStation > countOfStation) {
+        if (newNumberCurrentRadioStation > (countOfStation - 1)) {
             return;
         }
 
@@ -42,7 +42,7 @@ public class Radio {
     }
 
     public void increaseNumberRadioStation() {
-        if (currentNumberRadioStation < countOfStation) {
+        if (currentNumberRadioStation < (countOfStation - 1)) {
             currentNumberRadioStation = currentNumberRadioStation + 1;
         } else {
             currentNumberRadioStation = 0;
@@ -53,9 +53,10 @@ public class Radio {
         if (currentNumberRadioStation > 0) {
             currentNumberRadioStation = currentNumberRadioStation - 1;
         } else {
-            currentNumberRadioStation = countOfStation - 1;
+            currentNumberRadioStation = 9;
         }
     }
+
 
     public void setToMaxNumberRadioStation() {
         currentNumberRadioStation = 9;
