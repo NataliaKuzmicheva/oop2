@@ -1,27 +1,34 @@
 public class Radio {
-    private int currentNumberRadiostation;
+    private int currentNumberRadioStation;
     private int currentSoundVolume;
+    private int countOfStation;
 
-    public int getCurrentNumberRadiostation() {
-
-        return currentNumberRadiostation;
+    public Radio() {
+        this.countOfStation = 10;
     }
 
-    public void setCurrentNumberRadiostation(int newNumberCurrentRadiostation) {
-        if (newNumberCurrentRadiostation < 0) {
+    public Radio(int countOfStation) {
+        this.countOfStation = countOfStation;
+    }
+
+    public int getCurrentNumberRadioStation() {
+        return currentNumberRadioStation;
+    }
+
+    public void setCurrentNumberRadioStation(int newNumberCurrentRadioStation) {
+        if (newNumberCurrentRadioStation < 0) {
             return;
         }
-        if (newNumberCurrentRadiostation > 9) {
+        if (newNumberCurrentRadioStation > countOfStation) {
             return;
         }
 
-        currentNumberRadiostation = newNumberCurrentRadiostation;
+        currentNumberRadioStation = newNumberCurrentRadioStation;
     }
 
     public int getCurrentSoundVolume() {
         return currentSoundVolume;
     }
-
 
     public void setCurrentSoundVolume(int newCurrentSoundVolume) {
         if (newCurrentSoundVolume < 0) {
@@ -30,34 +37,33 @@ public class Radio {
         if (newCurrentSoundVolume > 100) {
             return;
         }
+
         currentSoundVolume = newCurrentSoundVolume;
     }
 
-    public void increaseNumberRadiostation() {
-        if (currentNumberRadiostation < 9) {
-            currentNumberRadiostation = currentNumberRadiostation + 1;
+    public void increaseNumberRadioStation() {
+        if (currentNumberRadioStation < countOfStation) {
+            currentNumberRadioStation = currentNumberRadioStation + 1;
         } else {
-            currentNumberRadiostation = 0;
+            currentNumberRadioStation = 0;
         }
     }
 
     public void decreaseNumberRadioStation() {
-        if (currentNumberRadiostation > 0) {
-            currentNumberRadiostation = currentNumberRadiostation - 1;
+        if (currentNumberRadioStation > 0) {
+            currentNumberRadioStation = currentNumberRadioStation - 1;
         } else {
-            currentNumberRadiostation = 9;
+            currentNumberRadioStation = countOfStation - 1;
         }
     }
 
-    public void setToMaxNumberRadiostation() {
-        currentNumberRadiostation = 9;
+    public void setToMaxNumberRadioStation() {
+        currentNumberRadioStation = 9;
     }
 
-    public void setToMinNumberRadiostation() {
-        currentNumberRadiostation = 0;
+    public void setToMinNumberRadioStation() {
+        currentNumberRadioStation = 0;
     }
-
-
 
     public void increaseSoundVolume() {
         if (currentSoundVolume < 100) {
